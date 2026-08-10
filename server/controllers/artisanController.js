@@ -1,6 +1,7 @@
 const { Artisan, Specialite, Categorie } = require('../models');
 const { Op } = require('sequelize');
 const transporter = require('../services/mailService');
+const { validationResult } = require('express-validator');
 
 // Récupérer les artisans du mois
 exports.getTopArtisans = async (req, res) => {
@@ -143,6 +144,15 @@ exports.searchArtisans = async (req, res) => {
 // Envoyer un message à un artisan
 exports.contactArtisan = async (req, res) => {
     try {
+        const errors = validationResult(req);
+
+        if (!errors.isEmpty()) {
+            return res.status(400).json({
+                message: 'Données du formulaire invalides',
+                errors: errors.array()
+            });
+        }
+        
         const { id } = req.params;
         const { nom, email, objet, message } = req.body;
 
