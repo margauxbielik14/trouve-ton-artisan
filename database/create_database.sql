@@ -1,13 +1,16 @@
 -- Création de la base de données
+
 CREATE DATABASE IF NOT EXISTS trouve_ton_artisan
 CHARACTER SET utf8mb4
 COLLATE utf8mb4_unicode_ci;
 
 -- Sélection de la base de données
+
 USE trouve_ton_artisan;
 
 
 -- Création de la table categorie
+
 CREATE TABLE categorie (
     id_categorie INT AUTO_INCREMENT PRIMARY KEY,
     nom VARCHAR(100) NOT NULL UNIQUE
@@ -15,6 +18,7 @@ CREATE TABLE categorie (
 
 
 -- Création de la table specialite
+
 CREATE TABLE specialite (
     id_specialite INT AUTO_INCREMENT PRIMARY KEY,
     nom VARCHAR(100) NOT NULL UNIQUE,
@@ -27,6 +31,7 @@ CREATE TABLE specialite (
 
 
 -- Création de la table artisan
+
 CREATE TABLE artisan (
     id_artisan INT AUTO_INCREMENT PRIMARY KEY,
     nom VARCHAR(150) NOT NULL,

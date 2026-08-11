@@ -11,14 +11,20 @@ const rateLimit = require('express-rate-limit');
 const app = express();
 
 // Sécurisation des en-têtes HTTP
+
 app.use(helmet());
 
 // Autoriser uniquement l'application front-end
+
 app.use(cors({
-    origin: 'http://localhost:5173'
-}));
+    origin: [
+      'http://localhost:5173',
+      'http://localhost:4173'
+    ]
+  }));
 
 // Limiter le nombre de requêtes vers l'API
+
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000,
     limit: 100,
@@ -30,9 +36,10 @@ const limiter = rateLimit({
 app.use('/api', limiter);
 
 // Lecture des données JSON
+
 app.use(express.json({ limit: '10kb' }));
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use('/api/categories', categorieRoutes);
 app.use('/api/artisans', artisanRoutes);
@@ -41,9 +48,9 @@ sequelize.authenticate()
     .then(() => {
         console.log('✅ Connexion à MySQL réussie');
     })
-    .catch((error) => {
-        console.error('❌ Erreur de connexion à MySQL :', error);
-    });
+    .catch(() => {
+        console.error('❌ Erreur de connexion à MySQL');
+      });
 
 app.get('/', (req, res) => {
     res.json({ message: 'API Trouve ton artisan' });

@@ -1,7 +1,9 @@
 -- Sélection de la base de données
+
 USE trouve_ton_artisan;
 
 -- Insertion des catégories
+
 INSERT INTO categorie (nom) VALUES
 ('Alimentation'),
 ('Bâtiment'),
@@ -9,6 +11,7 @@ INSERT INTO categorie (nom) VALUES
 ('Services');
 
 -- Insertion des spécialités
+
 INSERT INTO specialite (nom, id_categorie) VALUES
 ('Boucher', 1),
 ('Boulanger', 1),
@@ -30,6 +33,7 @@ INSERT INTO specialite (nom, id_categorie) VALUES
 ('Webdesign', 4);
 
 -- Insertion des artisans
+
 INSERT INTO artisan
 (nom, note, ville, a_propos, email, site_web, top, id_specialite)
 VALUES

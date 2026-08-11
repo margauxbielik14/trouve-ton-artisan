@@ -1,0 +1,740 @@
+/* POLICES */
+
+@font-face {
+    font-family: 'Graphik';
+    src: url('../assets/fonts/Graphik-Regular-Trial.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'Graphik';
+    src: url('../assets/fonts/Graphik-Medium-Trial.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'Graphik';
+    src: url('../assets/fonts/Graphik-Bold-Trial.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+/* COULEURS */
+
+$color-light: #f1f8fc;
+$color-blue: #0074c7;
+$color-dark-blue: #00497c;
+$color-dark: #384050;
+$color-red: #cd2c2e;
+$color-green: #82b864;
+$color-white: #ffffff;
+
+/* STYLES GLOBAUX */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Graphik', Arial, sans-serif;
+  color: $color-dark;
+  background-color: $color-white;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+/* HEADER */
+
+.site-header {
+    background-color: $color-white;
+    border-bottom: 1px solid #d9d9d9;
+    padding: 20px;
+  
+    &__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+  
+    &__logo {
+      width: 180px;
+      display: block;
+    }
+  
+    &__menu-button {
+      border: 0;
+      background: transparent;
+      font-size: 32px;
+      cursor: pointer;
+    }
+  
+    &__search {
+      margin-top: 24px;
+    }
+  
+    &__search-row {
+      display: flex;
+      border-bottom: 2px solid $color-blue;
+      border-right: 2px solid $color-blue;
+  
+      input {
+        flex: 1;
+        border: 0;
+        outline: 0;
+        padding: 8px 0;
+        background: transparent;
+      
+        &:focus-visible {
+          outline: 2px solid $color-blue;
+          outline-offset: 3px;
+        }
+      }
+  
+      button {
+        border: 0;
+        background: transparent;
+        color: $color-blue;
+        font-size: 24px;
+        cursor: pointer;
+      }
+    }
+  
+    &__nav {
+      display: none;
+    }
+  }
+
+  .site-header__search-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    display: block;
+  }
+
+  .site-header__nav--open {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 20px;
+  }
+
+/* HEADER - DESKTOP */
+
+  @media (min-width: 992px) {
+    .site-header {
+      padding: 28px 60px 0;
+  
+      &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+  
+      &__logo {
+        width: 190px;
+        margin-top: 8px;
+      }
+  
+      &__menu-button {
+        display: none;
+      }
+  
+      &__search {
+        width: 360px;
+        margin: -48px 0 18px auto;
+  
+        label {
+          margin-bottom: 6px;
+        }
+      }
+  
+      &__nav {
+        display: flex;
+        justify-content: center;
+        gap: 90px;
+        margin-top: 10px;
+        padding: 14px 0;
+  
+        a {
+          font-weight: 500;
+          color: $color-dark;
+  
+          &:hover {
+            color: $color-blue;
+          }
+        }
+      }
+    }
+  }
+
+/* CARTES ARTISANS */
+
+  .artisans-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .artisan-card {
+    border: 1px solid $color-blue;
+    background-color: $color-white;
+    border-radius: 2px;
+  
+    &__link {
+      display: block;
+      padding: 18px;
+    }
+  
+    &__name {
+      margin: 0 0 10px;
+      color: $color-dark-blue;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+  
+    p {
+      margin: 6px 0;
+      color: $color-blue;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .artisans-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .artisans-grid--list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0;
+  
+    &__stars {
+      color: $color-blue;
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+    }
+  
+    &__number {
+      font-size: 0.9rem;
+      color: $color-dark;
+    }
+  }
+
+/* PAGE D'ACCUEIL */
+
+  main {
+    padding: 32px 20px;
+  }
+  
+  .how-to {
+    max-width: 1100px;
+    margin: 0 auto 50px;
+
+    h1::before {
+        content: '';
+        display: block;
+        width: 32px;
+        height: 8px;
+        margin-bottom: 16px;
+        background-color: $color-green;
+      }
+  
+    h1 {
+      margin-bottom: 30px;
+      color: $color-dark-blue;
+      font-size: 1.7rem;
+      font-weight: 700;
+    }
+  
+    &__steps {
+      display: grid;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+  
+      li {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+  
+        span {
+          display: flex;
+          flex: 0 0 42px;
+          width: 42px;
+          height: 42px;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          background-color: $color-blue;
+          color: $color-white;
+          font-weight: 700;
+        }
+  
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+  
+  .top-artisans {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    h2::before {
+        content: '';
+        display: block;
+        width: 32px;
+        height: 8px;
+        margin-bottom: 16px;
+        background-color: $color-red;
+      }
+  
+    h2 {
+      margin-bottom: 25px;
+      color: $color-dark-blue;
+      font-weight: 700;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    main {
+      padding: 50px 40px;
+    }
+  
+    .how-to__steps {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 992px) {
+    main {
+      padding: 60px;
+    }
+  
+    .how-to__steps {
+      grid-template-columns: repeat(4, 1fr);
+  
+      li {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  }
+
+/* FOOTER */
+
+  .site-footer {
+    display: grid;
+    gap: 32px;
+    padding: 36px 24px;
+    background-color: $color-dark;
+    color: $color-white;
+  
+    &__section {
+      h2 {
+        margin-bottom: 16px;
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+  
+      p {
+        margin: 0;
+        line-height: 1.7;
+      }
+    }
+  
+    &__nav {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  
+      a {
+        color: $color-white;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .site-footer {
+      grid-template-columns: repeat(3, 1fr);
+      padding: 40px 60px;
+    }
+  }
+
+/* PAGE LISTE DES ARTISANS / CATÉGORIES */
+
+.artisans-list {
+    max-width: 1100px;
+    margin: 0 auto;
+  
+    &__heading {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 30px;
+  
+      h1 {
+        margin: 0;
+        color: $color-dark-blue;
+        font-size: 1.7rem;
+        font-weight: 700;
+      }
+  
+      p {
+        margin: 6px 0 0;
+        color: $color-dark;
+      }
+    }
+  
+    &__marker {
+      width: 28px;
+      height: 8px;
+      background-color: $color-red;
+      flex-shrink: 0;
+    }
+  }
+
+/* FICHE ARTISAN */
+
+  .artisan-detail {
+    max-width: 1100px;
+    margin: 0 auto;
+  
+    &__intro {
+      display: grid;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+  
+    &__infos {
+      h1 {
+        margin: 8px 0 10px;
+        color: $color-dark-blue;
+        font-size: 1.8rem;
+        font-weight: 700;
+      }
+  
+      p {
+        margin: 5px 0;
+        color: $color-blue;
+      }
+    }
+  
+    &__marker {
+      display: block;
+      width: 38px;
+      height: 8px;
+      background-color: $color-red;
+    }
+  
+    &__image {
+      img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+      }
+    }
+  
+    &__about {
+        position: relative;
+        margin: 55px 0 45px;
+        padding: 20px;
+        background-color: $color-light;
+      
+        &::before {
+          content: '';
+          position: absolute;
+          top: -28px;
+          left: 12%;
+          width: 76%;
+          height: 1px;
+          background-color: $color-blue;
+        }
+      
+        h2 {
+          margin-top: 0;
+          color: $color-dark-blue;
+          font-size: 1.2rem;
+          font-weight: 700;
+        }
+      }
+  
+    &__contact-info {
+      margin-bottom: 35px;
+  
+      h2 {
+        color: $color-dark-blue;
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+  
+      a {
+        color: $color-blue;
+      }
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .artisan-detail__intro {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+  }
+
+/* FORMULAIRE DE CONTACT */
+
+  .contact-form {
+    position: relative;
+    margin-top: 40px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -28px;
+        left: 12%;
+        width: 76%;
+        height: 1px;
+        background-color: $color-blue;
+      }
+  
+    h2 {
+      margin-bottom: 24px;
+      color: $color-dark-blue;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+  
+    &__form {
+      display: grid;
+      gap: 18px;
+    }
+  
+    &__group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+  
+      label {
+        font-weight: 500;
+        color: $color-dark;
+      }
+  
+      input,
+textarea {
+  width: 100%;
+  border: none;
+  padding: 12px;
+  background-color: $color-light;
+
+  &::placeholder {
+    color: $color-blue;
+    opacity: 1;
+  }
+
+  &:focus {
+    outline: 2px solid $color-blue;
+    outline-offset: 2px;
+  }
+}
+  
+      textarea {
+        min-height: 140px;
+        resize: vertical;
+      }
+    }
+  
+    &__button {
+      justify-self: start;
+      border: 0;
+      padding: 12px 26px;
+      background-color: $color-red;
+      color: $color-white;
+      font-weight: 700;
+      cursor: pointer;
+      border-radius: 4px;
+  
+      &:hover {
+        opacity: 0.9;
+      }
+  
+      &:focus {
+        outline: 3px solid $color-dark-blue;
+        outline-offset: 3px;
+      }
+    }
+  
+    &__confirmation {
+      margin-top: 16px;
+      font-weight: 500;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .contact-form__form {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .contact-form__group:nth-of-type(3),
+.contact-form__group:nth-of-type(4) {
+  grid-column: 1 / -1;
+}
+  
+    .contact-form__button {
+      grid-column: 1 / -1;
+    }
+  }
+
+/* PAGES LÉGALES */
+
+  .legal-page {
+    max-width: 900px;
+    margin: 0 auto;
+  
+    &__marker {
+      display: block;
+      width: 38px;
+      height: 8px;
+      margin-bottom: 12px;
+      background-color: $color-red;
+    }
+  
+    h1 {
+      margin-bottom: 30px;
+      color: $color-dark-blue;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+  
+    p {
+      font-size: 1.1rem;
+    }
+  }
+
+/* PAGE 404 */
+
+  .not-found {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    gap: 40px;
+    align-items: center;
+  
+    &__marker {
+      display: block;
+      width: 38px;
+      height: 8px;
+      margin-bottom: 12px;
+      background-color: $color-red;
+    }
+  
+    h1 {
+      margin: 0;
+      color: $color-dark-blue;
+      font-size: 4rem;
+      font-weight: 700;
+    }
+  
+    h2 {
+      margin: 8px 0 15px;
+      color: $color-dark-blue;
+      font-size: 1.7rem;
+    }
+  
+    p {
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+  
+    &__button {
+      display: inline-block;
+      padding: 12px 22px;
+      background-color: $color-red;
+      color: $color-white;
+      font-weight: 700;
+  
+      &:hover {
+        opacity: 0.9;
+      }
+  
+      &:focus {
+        outline: 3px solid $color-dark-blue;
+        outline-offset: 3px;
+      }
+    }
+  
+    &__image {
+      img {
+        width: 100%;
+        display: block;
+      }
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .not-found {
+      grid-template-columns: 1fr 1fr;
+    }
+  } 
+
+/* CLASSES UTILITAIRES */
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  a:focus-visible,
+button:focus-visible {
+  outline: 3px solid $color-blue;
+  outline-offset: 3px;
+}
+
+.page-loading {
+    min-height: 70vh;
+  }

@@ -4,6 +4,7 @@ const transporter = require('../services/mailService');
 const { validationResult } = require('express-validator');
 
 // Récupérer les artisans du mois
+
 exports.getTopArtisans = async (req, res) => {
     try {
         const artisans = await Artisan.findAll({
@@ -33,8 +34,18 @@ exports.getTopArtisans = async (req, res) => {
 };
 
 // Récupérer les artisans d'une catégorie
+
 exports.getArtisansByCategorie = async (req, res) => {
     try {
+        const errors = validationResult(req);
+
+if (!errors.isEmpty()) {
+  return res.status(400).json({
+    message: 'Identifiant de catégorie invalide',
+    errors: errors.array()
+  });
+}
+
         const { id } = req.params;
 
         const artisans = await Artisan.findAll({
@@ -67,8 +78,18 @@ exports.getArtisansByCategorie = async (req, res) => {
 };
 
 // Récupérer un artisan par son identifiant
+
 exports.getArtisanById = async (req, res) => {
     try {
+        const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      return res.status(400).json({
+        message: 'Identifiant d’artisan invalide',
+        errors: errors.array()
+      });
+    }
+
         const { id } = req.params;
 
         const artisan = await Artisan.findByPk(id, {
@@ -102,8 +123,18 @@ exports.getArtisanById = async (req, res) => {
 };
 
 // Rechercher des artisans par nom
+
 exports.searchArtisans = async (req, res) => {
     try {
+        const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      return res.status(400).json({
+        message: 'Recherche invalide',
+        errors: errors.array()
+      });
+    }
+
         const { search } = req.query;
 
         if (!search) {
@@ -142,6 +173,7 @@ exports.searchArtisans = async (req, res) => {
 };
 
 // Envoyer un message à un artisan
+
 exports.contactArtisan = async (req, res) => {
     try {
         const errors = validationResult(req);
@@ -152,7 +184,7 @@ exports.contactArtisan = async (req, res) => {
                 errors: errors.array()
             });
         }
-        
+
         const { id } = req.params;
         const { nom, email, objet, message } = req.body;
 
@@ -186,7 +218,7 @@ ${message}`
         });
 
     } catch (error) {
-        console.error(error);
+        console.error('Erreur lors de l’envoi du message');
 
         res.status(500).json({
             message: 'Erreur lors de l’envoi du message'
