@@ -41,7 +41,7 @@ Avant de lancer le projet, il faut disposer de :
 Cloner le dépôt :
 
 ```bash
-git clone URL_DU_DEPOT
+git clone https://github.com/margauxbielik14/trouve-ton-artisan.git
 ```
 
 Puis entrer dans le dossier du projet :
