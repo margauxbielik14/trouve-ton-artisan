@@ -41,6 +41,10 @@ app.use(express.json({ limit: '10kb' }));
 
 const PORT = process.env.PORT || 3000;
 
+app.get('/api/test', (req, res) => {
+    res.json({ message: 'Route API test OK' });
+  });
+
 app.use('/api/categories', categorieRoutes);
 app.use('/api/artisans', artisanRoutes);
 
