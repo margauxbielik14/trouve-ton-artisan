@@ -10,6 +10,8 @@ const rateLimit = require('express-rate-limit');
 
 const app = express();
 
+app.set('trust proxy', 1);
+
 // Sécurisation des en-têtes HTTP
 
 app.use(helmet());

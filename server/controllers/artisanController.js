@@ -218,7 +218,7 @@ ${message}`
         });
 
     } catch (error) {
-        console.error('Erreur lors de l’envoi du message');
+        console.error('Erreur lors de l’envoi du message :', error);
 
         res.status(500).json({
             message: 'Erreur lors de l’envoi du message'
