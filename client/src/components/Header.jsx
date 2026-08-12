@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function Header() {
     const [categories, setCategories] = useState([]);
     const [search, setSearch] = useState('');
@@ -8,7 +10,7 @@ function Header() {
     const navigate = useNavigate();
   
     useEffect(() => {
-      fetch('http://localhost:3000/api/categories')
+        fetch(`${API_URL}/api/categories`)
         .then((response) => response.json())
         .then((data) => {
           setCategories(data);

@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
 import ArtisanCard from '../components/ArtisanCard';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function ArtisansList() {
   const [artisans, setArtisans] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -37,9 +39,9 @@ function ArtisansList() {
     let url;
 
     if (search) {
-      url = `http://localhost:3000/api/artisans/search?search=${encodeURIComponent(search)}`;
+        url = `${API_URL}/api/artisans/search?search=${encodeURIComponent(search)}`;
     } else {
-      url = `http://localhost:3000/api/artisans/categorie/${id}`;
+        url = `${API_URL}/api/artisans/categorie/${id}`;
     }
 
     setLoading(true);

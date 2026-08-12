@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import ArtisanCard from '../components/ArtisanCard';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function Home() {
   const [artisans, setArtisans] = useState([]);
 
@@ -15,7 +17,7 @@ if (metaDescription) {
     'Trouvez facilement un artisan en Auvergne-Rhône-Alpes selon son métier et sa localisation.'
   );
 }
-    fetch('http://localhost:3000/api/artisans/top')
+fetch(`${API_URL}/api/artisans/top`)
       .then((response) => response.json())
       .then((data) => {
         setArtisans(data);

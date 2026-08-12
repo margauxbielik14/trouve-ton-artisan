@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function ContactForm({ artisanId }) {
   const [formData, setFormData] = useState({
     nom: '',
@@ -22,7 +24,7 @@ function ContactForm({ artisanId }) {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/api/artisans/${artisanId}/contact`,
+        `${API_URL}/api/artisans/${artisanId}/contact`,
         {
           method: 'POST',
           headers: {

@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import ContactForm from '../components/ContactForm';
 import Rating from '../components/Rating';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function ArtisanDetail() {
   const { id } = useParams();
 
@@ -10,7 +12,7 @@ function ArtisanDetail() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/artisans/${id}`)
+    fetch(`${API_URL}/api/artisans/${id}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Artisan non trouvé');
