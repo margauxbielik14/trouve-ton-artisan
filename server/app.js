@@ -52,12 +52,12 @@ app.use('/api/categories', categorieRoutes);
 app.use('/api/artisans', artisanRoutes);
 
 sequelize.authenticate()
-    .then(() => {
-        console.log('✅ Connexion à MySQL réussie');
-    })
-    .catch(() => {
-        console.error('❌ Erreur de connexion à MySQL');
-      });
+.then(() => {
+  console.log('✅ Connexion à MySQL réussie');
+})
+.catch((error) => {
+  console.error('❌ Erreur de connexion à MySQL :', error);
+});
 
 app.get('/', (req, res) => {
     res.json({ message: 'API Trouve ton artisan' });
