@@ -25,6 +25,9 @@
     "nodemailer": "^10.0.16",
     "sequelize": "^6.37.8"
   },
+  "engines": {
+  "node": "24.x"
+},
   "overrides": {
     "express-mysql-session": {
       "mysql2": "$mysql2"
