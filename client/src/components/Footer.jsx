@@ -59,6 +59,12 @@ function Footer() {
           ))}
         </nav>
       </section>
+
+      <div className="footer-admin">
+  <Link to="/admin/connexion">
+    Administration
+  </Link>
+</div>
     </footer>
   );
 }
