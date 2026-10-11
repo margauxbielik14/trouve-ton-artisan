@@ -16,12 +16,14 @@ const sessionConnection = mysql.createPool({
     database: process.env.DB_NAME,
     ...(isAiven && {
     ssl: {
-        ca: fs.readFileSync(
+    ca: process.env.DB_SSL_CA
+        ? process.env.DB_SSL_CA.replace(/\\n/g, '\n')
+        : fs.readFileSync(
             path.join(__dirname, '../certs/ca.pem'),
             'utf8'
         ),
-        rejectUnauthorized: true
-    }
+    rejectUnauthorized: true
+}
 })
 });
 

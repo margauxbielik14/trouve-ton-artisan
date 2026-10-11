@@ -21,12 +21,14 @@ const sequelize = new Sequelize(
         ...(isAiven && {
             dialectOptions: {
                 ssl: {
-                    ca: fs.readFileSync(
-                        path.join(__dirname, '../certs/ca.pem'),
-                        'utf8'
-                    ),
-                    rejectUnauthorized: true
-                }
+    ca: process.env.DB_SSL_CA
+        ? process.env.DB_SSL_CA.replace(/\\n/g, '\n')
+        : fs.readFileSync(
+            path.join(__dirname, '../certs/ca.pem'),
+            'utf8'
+        ),
+    rejectUnauthorized: true
+}
             }
         })
     }
