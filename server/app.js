@@ -3,10 +3,15 @@ const sequelize = require('./config/database');
 require('./models');
 
 const categorieRoutes = require('./routes/categorieRoutes');
+const specialiteRoutes = require('./routes/specialiteRoutes');
 const artisanRoutes = require('./routes/artisanRoutes');
+const authRoutes = require('./routes/authRoutes');
+const adminRoutes = require('./routes/adminRoutes');
+
 const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
+const sessionMiddleware = require('./config/session');
 
 const app = express();
 
@@ -23,8 +28,12 @@ app.use(cors({
       'http://localhost:5173',
       'http://localhost:4173',
       'https://trouve-ton-artisan-frontend-tmvc.onrender.com'
-    ]
+    ],
+    credentials: true
   }));
+
+// Gestion des sessions administrateur
+app.use(sessionMiddleware);
 
 // Limiter le nombre de requêtes vers l'API
 
@@ -49,7 +58,10 @@ app.get('/api/test', (req, res) => {
   });
 
 app.use('/api/categories', categorieRoutes);
+app.use('/api/specialites', specialiteRoutes);
 app.use('/api/artisans', artisanRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/admin', adminRoutes);
 
 sequelize.authenticate()
 .then(() => {

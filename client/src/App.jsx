@@ -5,6 +5,10 @@ import ArtisansList from './pages/ArtisansList';
 import ArtisanDetail from './pages/ArtisanDetail';
 import LegalPage from './pages/LegalPage';
 import NotFound from './pages/NotFound';
+import AdminLogin from './pages/admin/AdminLogin';
+import AdminDashboard from './pages/admin/AdminDashboard';
+import AdminArtisanAdd from './pages/admin/AdminArtisanAdd';
+import AdminArtisanEdit from './pages/admin/AdminArtisanEdit';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -50,6 +54,26 @@ function App() {
           <Route
             path="/cookies"
             element={<LegalPage />}
+          />
+
+          <Route
+          path="/admin/connexion"
+          element={<AdminLogin />}
+          />
+
+          <Route
+          path="/admin/dashboard"
+          element={<AdminDashboard />}
+          />
+
+          <Route
+          path="/admin/artisans/ajouter"
+          element={<AdminArtisanAdd />}
+          />
+
+          <Route
+          path="/admin/artisans/modifier/:id"
+          element={<AdminArtisanEdit />}
           />
 
           <Route path="*" element={<NotFound />} />

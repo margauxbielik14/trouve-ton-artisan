@@ -1,6 +1,7 @@
 const Categorie = require('./Categorie');
 const Specialite = require('./Specialite');
 const Artisan = require('./Artisan');
+const Administrateur = require('./Administrateur');
 
 // Une catégorie possède plusieurs spécialités
 
@@ -29,5 +30,6 @@ Artisan.belongsTo(Specialite, {
 module.exports = {
     Categorie,
     Specialite,
-    Artisan
+    Artisan,
+    Administrateur
 };

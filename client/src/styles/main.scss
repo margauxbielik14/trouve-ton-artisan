@@ -738,3 +738,494 @@ button:focus-visible {
 .page-loading {
     min-height: 70vh;
   }
+
+  /* PAGE DE CONNEXION ADMINISTRATEUR */
+
+.admin-login {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  &__container {
+    width: 100%;
+  }
+
+  h1 {
+    margin: 0 0 40px;
+    color: $color-dark-blue;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px 24px;
+  background-color: $color-white;
+  border: 1px solid $color-dark-blue;
+  border-radius: 2px;
+
+  h2 {
+    margin: 0 0 30px;
+    color: $color-green;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: center;
+  }
+}
+
+  &__field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+
+  label {
+    color: $color-blue;
+    font-weight: 400;
+  }
+
+  input {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 0;
+    background-color: $color-light;
+
+    &:focus-visible {
+      outline: 2px solid $color-blue;
+      outline-offset: 2px;
+    }
+  }
+}
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 30px;
+
+    button,
+    a {
+      width: 100%;
+      max-width: 280px;
+      padding: 14px 20px;
+      border: 0;
+      border-radius: 4px;
+      text-align: center;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button {
+      background-color: $color-red;
+      color: $color-white;
+    }
+
+    a {
+      background-color: $color-dark-blue;
+      color: $color-white;
+    }
+
+    button:hover,
+    a:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .admin-login {
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 60px;
+    }
+
+    &__form {
+      padding: 45px 60px;
+    }
+
+    &__actions {
+      flex-direction: row;
+      justify-content: center;
+      gap: 24px;
+    }
+  }
+}
+
+/* DASHBOARD ADMINISTRATEUR */
+
+.admin-dashboard {
+  max-width: 1100px;
+  margin: 0 auto;
+  color: $color-dark-blue;
+  &__tools {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 35px;
+}
+
+&__add {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: $color-green;
+  color: $color-white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(0.95);
+  }
+}
+
+&__search {
+  width: 100%;
+  max-width: 380px;
+  padding: 12px 16px;
+  border: 1px solid $color-blue;
+  border-radius: 0;
+  background-color: $color-white;
+  color: $color-dark;
+  font-size: 1rem;
+
+  &:focus-visible {
+    outline: 2px solid $color-blue;
+    outline-offset: 2px;
+  }
+}
+
+&__separator {
+  margin: 35px 0 30px;
+  border: 0;
+  border-top: 1px solid $color-dark-blue;
+  opacity: 1;
+}
+
+&__actions {
+  white-space: nowrap;
+}
+
+&__icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 6px;
+  margin-right: 8px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-blue;
+    outline-offset: 2px;
+  }
+}
+
+&__logout {
+  display: block;
+  margin: 35px 0 0 auto;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  background-color: $color-dark-blue;
+  color: $color-white;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-blue;
+    outline-offset: 3px;
+  }
+}
+
+&__empty {
+  padding: 30px 20px !important;
+  text-align: center !important;
+  color: $color-dark-blue;
+  font-style: italic;
+}
+
+  h1 {
+    margin-bottom: 35px;
+    color: $color-dark-blue;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+    color: $color-dark-blue;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  &__table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid $color-dark-blue;
+    border-radius: 2px;
+  }
+
+  &__table {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+    color: $color-dark-blue;
+
+    th,
+    td {
+      padding: 16px 20px;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    th {
+      font-weight: 700;
+      background-color: $color-white;
+    }
+
+    tbody tr:nth-child(odd) {
+      background-color: $color-light;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: $color-white;
+    }
+
+    td:last-child {
+      white-space: nowrap;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .admin-dashboard {
+    &__tools {
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 70px;
+    }
+
+    &__search {
+      width: 380px;
+    }
+  }
+}
+
+// Page d'ajout d'un artisan
+
+.admin-artisan-form {
+  max-width: 1100px;
+  margin: 60px auto 100px;
+  padding: 0 24px;
+
+  &__title {
+    color: $color-dark-blue;
+    font-size: 32px;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 40px;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 55px;
+      height: 6px;
+      background-color: $color-red;
+      margin: 0 0 20px;
+    }
+  }
+
+  &__fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 32px;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    label {
+      color: $color-dark-blue;
+      font-weight: 600;
+    }
+
+    input:not([type="checkbox"]),
+    select,
+    textarea {
+      display: block;
+      width: 100%;
+      min-width: 0;
+      padding: 14px 16px;
+      border: none;
+      border-radius: 0;
+      background-color: $color-light;
+      color: $color-dark;
+      font: inherit;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 2px solid $color-blue;
+      outline-offset: 2px;
+    }
+
+    &:has(#nom),
+    &:has(#email),
+    &:has(#site_web),
+    &:has(#a_propos) {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__checkbox {
+    grid-column: 1 / -1;
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: $color-dark-blue;
+      font-size: 18px;
+      font-weight: 400;
+      cursor: pointer;
+    }
+
+    input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin: 0;
+      accent-color: $color-blue;
+      cursor: pointer;
+    }
+  }
+
+  &__actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+&__cancel,
+&__submit {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+  min-height: 42px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  color: $color-white;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+&__cancel {
+  background-color: $color-red;
+}
+
+&__submit {
+  background-color: $color-green;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+}
+
+// Responsive du formulaire d'ajout d'un artisan
+
+@media (max-width: 767px) {
+  .admin-artisan-form {
+    margin: 35px auto 50px;
+    padding: 0 16px;
+
+    &__title {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    &__fields {
+      gap: 20px 16px;
+    }
+
+    &__field {
+      label {
+        font-size: 14px;
+      }
+
+      input:not([type="checkbox"]),
+      select,
+      textarea {
+        padding: 12px;
+        font-size: 14px;
+      }
+    }
+
+    &__checkbox {
+  label {
+    font-size: 15px;
+    gap: 10px;
+  }
+
+  input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+}
+
+&__actions {
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+&__cancel,
+&__submit {
+  width: auto;
+  flex: 1;
+  min-height: 40px;
+  padding: 10px;
+  font-size: 14px;
+   }
+  }
+}

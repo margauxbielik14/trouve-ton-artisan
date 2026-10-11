@@ -19,3 +19,12 @@ node_modules/
 # Build du frontend
 
 dist/
+
+# Protection du certificat
+
+server/certs/
+
+#Protction
+cookies.txt
+
+server/generate-admin-hash.cjs

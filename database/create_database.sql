@@ -47,3 +47,20 @@ CREATE TABLE artisan (
         FOREIGN KEY (id_specialite)
         REFERENCES specialite(id_specialite)
 );
+
+-- Création de la table administrateur
+
+CREATE TABLE administrateur (
+    id_admin INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    mot_de_passe VARCHAR(255) NOT NULL
+);
+
+-- Création de la table des sessions administrateur
+
+CREATE TABLE IF NOT EXISTS sessions (
+    session_id VARCHAR(128) COLLATE utf8mb4_bin NOT NULL,
+    expires INT UNSIGNED NOT NULL,
+    data MEDIUMTEXT,
+    PRIMARY KEY (session_id)
+);
