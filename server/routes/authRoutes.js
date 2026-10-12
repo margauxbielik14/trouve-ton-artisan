@@ -1,10 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {
-    login,
-    me,
-    logout
-} = require('../controllers/authController');
+const { login, me, logout } = require('../controllers/authController');
 const loginLimiter = require('../middlewares/loginLimiter');
 const verifyOrigin = require('../middlewares/verifyOrigin');
 

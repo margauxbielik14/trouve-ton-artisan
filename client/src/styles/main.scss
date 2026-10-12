@@ -6,23 +6,23 @@
     font-weight: 400;
     font-style: normal;
     font-display: swap;
-  }
-  
-  @font-face {
+}
+
+@font-face {
     font-family: 'Graphik';
     src: url('../assets/fonts/Graphik-Medium-Trial.otf') format('opentype');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
-  }
-  
-  @font-face {
+}
+
+@font-face {
     font-family: 'Graphik';
     src: url('../assets/fonts/Graphik-Bold-Trial.otf') format('opentype');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
-  }
+}
 
 /* COULEURS */
 
@@ -36,34 +36,34 @@ $color-white: #ffffff;
 
 /* STYLES GLOBAUX */
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  font-family: 'Graphik', Arial, sans-serif;
-  color: $color-dark;
-  background-color: $color-white;
+    margin: 0;
+    font-family: 'Graphik', Arial, sans-serif;
+    color: $color-dark;
+    background-color: $color-white;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 button,
 input,
 textarea {
-  font: inherit;
+    font: inherit;
 }
 
 /* HEADER */
@@ -72,193 +72,193 @@ textarea {
     background-color: $color-white;
     border-bottom: 1px solid #d9d9d9;
     padding: 20px;
-  
-    &__top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-  
-    &__logo {
-      width: 180px;
-      display: block;
-    }
-  
-    &__menu-button {
-      border: 0;
-      background: transparent;
-      font-size: 32px;
-      cursor: pointer;
-    }
-  
-    &__search {
-      margin-top: 24px;
-    }
-  
-    &__search-row {
-      display: flex;
-      border-bottom: 2px solid $color-blue;
-      border-right: 2px solid $color-blue;
-  
-      input {
-        flex: 1;
-        border: 0;
-        outline: 0;
-        padding: 8px 0;
-        background: transparent;
-      
-        &:focus-visible {
-          outline: 2px solid $color-blue;
-          outline-offset: 3px;
-        }
-      }
-  
-      button {
-        border: 0;
-        background: transparent;
-        color: $color-blue;
-        font-size: 24px;
-        cursor: pointer;
-      }
-    }
-  
-    &__nav {
-      display: none;
-    }
-  }
 
-  .site-header__search-icon {
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    &__logo {
+        width: 180px;
+        display: block;
+    }
+
+    &__menu-button {
+        border: 0;
+        background: transparent;
+        font-size: 32px;
+        cursor: pointer;
+    }
+
+    &__search {
+        margin-top: 24px;
+    }
+
+    &__search-row {
+        display: flex;
+        border-bottom: 2px solid $color-blue;
+        border-right: 2px solid $color-blue;
+
+        input {
+            flex: 1;
+            border: 0;
+            outline: 0;
+            padding: 8px 0;
+            background: transparent;
+
+            &:focus-visible {
+                outline: 2px solid $color-blue;
+                outline-offset: 3px;
+            }
+        }
+
+        button {
+            border: 0;
+            background: transparent;
+            color: $color-blue;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    }
+
+    &__nav {
+        display: none;
+    }
+}
+
+.site-header__search-icon {
     width: 28px;
     height: 28px;
     object-fit: contain;
     display: block;
-  }
+}
 
-  .site-header__nav--open {
+.site-header__nav--open {
     display: flex;
     flex-direction: column;
     gap: 14px;
     margin-top: 20px;
-  }
+}
 
 /* HEADER - DESKTOP */
 
-  @media (min-width: 992px) {
+@media (min-width: 992px) {
     .site-header {
-      padding: 28px 60px 0;
-  
-      &__top {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-  
-      &__logo {
-        width: 190px;
-        margin-top: 8px;
-      }
-  
-      &__menu-button {
-        display: none;
-      }
-  
-      &__search {
-        width: 360px;
-        margin: -48px 0 18px auto;
-  
-        label {
-          margin-bottom: 6px;
+        padding: 28px 60px 0;
+
+        &__top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
-      }
-  
-      &__nav {
-        display: flex;
-        justify-content: center;
-        gap: 90px;
-        margin-top: 10px;
-        padding: 14px 0;
-  
-        a {
-          font-weight: 500;
-          color: $color-dark;
-  
-          &:hover {
-            color: $color-blue;
-          }
+
+        &__logo {
+            width: 190px;
+            margin-top: 8px;
         }
-      }
+
+        &__menu-button {
+            display: none;
+        }
+
+        &__search {
+            width: 360px;
+            margin: -48px 0 18px auto;
+
+            label {
+                margin-bottom: 6px;
+            }
+        }
+
+        &__nav {
+            display: flex;
+            justify-content: center;
+            gap: 90px;
+            margin-top: 10px;
+            padding: 14px 0;
+
+            a {
+                font-weight: 500;
+                color: $color-dark;
+
+                &:hover {
+                    color: $color-blue;
+                }
+            }
+        }
     }
-  }
+}
 
 /* CARTES ARTISANS */
 
-  .artisans-grid {
+.artisans-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
-  }
-  
-  .artisan-card {
+}
+
+.artisan-card {
     border: 1px solid $color-blue;
     background-color: $color-white;
     border-radius: 2px;
-  
+
     &__link {
-      display: block;
-      padding: 18px;
+        display: block;
+        padding: 18px;
     }
-  
+
     &__name {
-      margin: 0 0 10px;
-      color: $color-dark-blue;
-      font-size: 1.1rem;
-      font-weight: 700;
+        margin: 0 0 10px;
+        color: $color-dark-blue;
+        font-size: 1.1rem;
+        font-weight: 700;
     }
-  
+
     p {
-      margin: 6px 0;
-      color: $color-blue;
+        margin: 6px 0;
+        color: $color-blue;
     }
-  }
-  
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
     .artisans-grid {
-      grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
-  }
+}
 
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
     .artisans-grid--list {
-      grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
-  }
+}
 
-  .rating {
+.rating {
     display: flex;
     align-items: center;
     gap: 10px;
     margin: 8px 0;
-  
+
     &__stars {
-      color: $color-blue;
-      font-size: 1.2rem;
-      letter-spacing: 2px;
+        color: $color-blue;
+        font-size: 1.2rem;
+        letter-spacing: 2px;
     }
-  
+
     &__number {
-      font-size: 0.9rem;
-      color: $color-dark;
+        font-size: 0.9rem;
+        color: $color-dark;
     }
-  }
+}
 
 /* PAGE D'ACCUEIL */
 
-  main {
+main {
     padding: 32px 20px;
-  }
-  
-  .how-to {
+}
+
+.how-to {
     max-width: 1100px;
     margin: 0 auto 50px;
 
@@ -269,48 +269,48 @@ textarea {
         height: 8px;
         margin-bottom: 16px;
         background-color: $color-green;
-      }
-  
+    }
+
     h1 {
-      margin-bottom: 30px;
-      color: $color-dark-blue;
-      font-size: 1.7rem;
-      font-weight: 700;
+        margin-bottom: 30px;
+        color: $color-dark-blue;
+        font-size: 1.7rem;
+        font-weight: 700;
     }
-  
+
     &__steps {
-      display: grid;
-      gap: 20px;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-  
-      li {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-  
-        span {
-          display: flex;
-          flex: 0 0 42px;
-          width: 42px;
-          height: 42px;
-          align-items: center;
-          justify-content: center;
-          border-radius: 50%;
-          background-color: $color-blue;
-          color: $color-white;
-          font-weight: 700;
+        display: grid;
+        gap: 20px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            span {
+                display: flex;
+                flex: 0 0 42px;
+                width: 42px;
+                height: 42px;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background-color: $color-blue;
+                color: $color-white;
+                font-weight: 700;
+            }
+
+            p {
+                margin: 0;
+            }
         }
-  
-        p {
-          margin: 0;
-        }
-      }
     }
-  }
-  
-  .top-artisans {
+}
+
+.top-artisans {
     max-width: 1100px;
     margin: 0 auto;
 
@@ -321,208 +321,208 @@ textarea {
         height: 8px;
         margin-bottom: 16px;
         background-color: $color-red;
-      }
-  
+    }
+
     h2 {
-      margin-bottom: 25px;
-      color: $color-dark-blue;
-      font-weight: 700;
+        margin-bottom: 25px;
+        color: $color-dark-blue;
+        font-weight: 700;
     }
-  }
-  
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
     main {
-      padding: 50px 40px;
+        padding: 50px 40px;
     }
-  
+
     .how-to__steps {
-      grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
-  }
-  
-  @media (min-width: 992px) {
+}
+
+@media (min-width: 992px) {
     main {
-      padding: 60px;
+        padding: 60px;
     }
-  
+
     .how-to__steps {
-      grid-template-columns: repeat(4, 1fr);
-  
-      li {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+        grid-template-columns: repeat(4, 1fr);
+
+        li {
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
-  }
+}
 
 /* FOOTER */
 
-  .site-footer {
+.site-footer {
     display: grid;
     gap: 32px;
     padding: 36px 24px;
     background-color: $color-dark;
     color: $color-white;
-  
+
     &__section {
-      h2 {
-        margin-bottom: 16px;
-        font-size: 1.1rem;
-        font-weight: 700;
-      }
-  
-      p {
-        margin: 0;
-        line-height: 1.7;
-      }
-    }
-  
-    &__nav {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-  
-      a {
-        color: $color-white;
-  
-        &:hover {
-          text-decoration: underline;
+        h2 {
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+            font-weight: 700;
         }
-      }
+
+        p {
+            margin: 0;
+            line-height: 1.7;
+        }
     }
-  }
-  
-  @media (min-width: 768px) {
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        a {
+            color: $color-white;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
     .site-footer {
-      grid-template-columns: repeat(3, 1fr);
-      padding: 40px 60px;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 40px 60px;
     }
-  }
+}
 
 /* PAGE LISTE DES ARTISANS / CATÉGORIES */
 
 .artisans-list {
     max-width: 1100px;
     margin: 0 auto;
-  
+
     &__heading {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-      margin-bottom: 30px;
-  
-      h1 {
-        margin: 0;
-        color: $color-dark-blue;
-        font-size: 1.7rem;
-        font-weight: 700;
-      }
-  
-      p {
-        margin: 6px 0 0;
-        color: $color-dark;
-      }
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 30px;
+
+        h1 {
+            margin: 0;
+            color: $color-dark-blue;
+            font-size: 1.7rem;
+            font-weight: 700;
+        }
+
+        p {
+            margin: 6px 0 0;
+            color: $color-dark;
+        }
     }
-  
+
     &__marker {
-      width: 28px;
-      height: 8px;
-      background-color: $color-red;
-      flex-shrink: 0;
+        width: 28px;
+        height: 8px;
+        background-color: $color-red;
+        flex-shrink: 0;
     }
-  }
+}
 
 /* FICHE ARTISAN */
 
-  .artisan-detail {
+.artisan-detail {
     max-width: 1100px;
     margin: 0 auto;
-  
+
     &__intro {
-      display: grid;
-      gap: 30px;
-      margin-bottom: 30px;
+        display: grid;
+        gap: 30px;
+        margin-bottom: 30px;
     }
-  
+
     &__infos {
-      h1 {
-        margin: 8px 0 10px;
-        color: $color-dark-blue;
-        font-size: 1.8rem;
-        font-weight: 700;
-      }
-  
-      p {
-        margin: 5px 0;
-        color: $color-blue;
-      }
+        h1 {
+            margin: 8px 0 10px;
+            color: $color-dark-blue;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        p {
+            margin: 5px 0;
+            color: $color-blue;
+        }
     }
-  
+
     &__marker {
-      display: block;
-      width: 38px;
-      height: 8px;
-      background-color: $color-red;
-    }
-  
-    &__image {
-      img {
-        width: 100%;
         display: block;
-        object-fit: cover;
-      }
+        width: 38px;
+        height: 8px;
+        background-color: $color-red;
     }
-  
+
+    &__image {
+        img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+    }
+
     &__about {
         position: relative;
         margin: 55px 0 45px;
         padding: 20px;
         background-color: $color-light;
-      
+
         &::before {
-          content: '';
-          position: absolute;
-          top: -28px;
-          left: 12%;
-          width: 76%;
-          height: 1px;
-          background-color: $color-blue;
+            content: '';
+            position: absolute;
+            top: -28px;
+            left: 12%;
+            width: 76%;
+            height: 1px;
+            background-color: $color-blue;
         }
-      
+
         h2 {
-          margin-top: 0;
-          color: $color-dark-blue;
-          font-size: 1.2rem;
-          font-weight: 700;
+            margin-top: 0;
+            color: $color-dark-blue;
+            font-size: 1.2rem;
+            font-weight: 700;
         }
-      }
-  
+    }
+
     &__contact-info {
-      margin-bottom: 35px;
-  
-      h2 {
-        color: $color-dark-blue;
-        font-size: 1.2rem;
-        font-weight: 700;
-      }
-  
-      a {
-        color: $color-blue;
-      }
+        margin-bottom: 35px;
+
+        h2 {
+            color: $color-dark-blue;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        a {
+            color: $color-blue;
+        }
     }
-  }
-  
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
     .artisan-detail__intro {
-      grid-template-columns: 1fr 1fr;
-      align-items: start;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
     }
-  }
+}
 
 /* FORMULAIRE DE CONTACT */
 
-  .contact-form {
+.contact-form {
     position: relative;
     margin-top: 40px;
 
@@ -534,190 +534,190 @@ textarea {
         width: 76%;
         height: 1px;
         background-color: $color-blue;
-      }
-  
+    }
+
     h2 {
-      margin-bottom: 24px;
-      color: $color-dark-blue;
-      font-size: 1.3rem;
-      font-weight: 700;
+        margin-bottom: 24px;
+        color: $color-dark-blue;
+        font-size: 1.3rem;
+        font-weight: 700;
     }
-  
+
     &__form {
-      display: grid;
-      gap: 18px;
+        display: grid;
+        gap: 18px;
     }
-  
+
     &__group {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-  
-      label {
-        font-weight: 500;
-        color: $color-dark;
-      }
-  
-      input,
-textarea {
-  width: 100%;
-  border: none;
-  padding: 12px;
-  background-color: $color-light;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
 
-  &::placeholder {
-    color: $color-blue;
-    opacity: 1;
-  }
+        label {
+            font-weight: 500;
+            color: $color-dark;
+        }
 
-  &:focus {
-    outline: 2px solid $color-blue;
-    outline-offset: 2px;
-  }
-}
-  
-      textarea {
-        min-height: 140px;
-        resize: vertical;
-      }
+        input,
+        textarea {
+            width: 100%;
+            border: none;
+            padding: 12px;
+            background-color: $color-light;
+
+            &::placeholder {
+                color: $color-blue;
+                opacity: 1;
+            }
+
+            &:focus {
+                outline: 2px solid $color-blue;
+                outline-offset: 2px;
+            }
+        }
+
+        textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
     }
-  
+
     &__button {
-      justify-self: start;
-      border: 0;
-      padding: 12px 26px;
-      background-color: $color-red;
-      color: $color-white;
-      font-weight: 700;
-      cursor: pointer;
-      border-radius: 4px;
-  
-      &:hover {
-        opacity: 0.9;
-      }
-  
-      &:focus {
-        outline: 3px solid $color-dark-blue;
-        outline-offset: 3px;
-      }
+        justify-self: start;
+        border: 0;
+        padding: 12px 26px;
+        background-color: $color-red;
+        color: $color-white;
+        font-weight: 700;
+        cursor: pointer;
+        border-radius: 4px;
+
+        &:hover {
+            opacity: 0.9;
+        }
+
+        &:focus {
+            outline: 3px solid $color-dark-blue;
+            outline-offset: 3px;
+        }
     }
-  
+
     &__confirmation {
-      margin-top: 16px;
-      font-weight: 500;
+        margin-top: 16px;
+        font-weight: 500;
     }
-  }
-  
-  @media (min-width: 768px) {
-    .contact-form__form {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  
-    .contact-form__group:nth-of-type(3),
-.contact-form__group:nth-of-type(4) {
-  grid-column: 1 / -1;
 }
-  
-    .contact-form__button {
-      grid-column: 1 / -1;
+
+@media (min-width: 768px) {
+    .contact-form__form {
+        grid-template-columns: repeat(2, 1fr);
     }
-  }
+
+    .contact-form__group:nth-of-type(3),
+    .contact-form__group:nth-of-type(4) {
+        grid-column: 1 / -1;
+    }
+
+    .contact-form__button {
+        grid-column: 1 / -1;
+    }
+}
 
 /* PAGES LÉGALES */
 
-  .legal-page {
+.legal-page {
     max-width: 900px;
     margin: 0 auto;
-  
+
     &__marker {
-      display: block;
-      width: 38px;
-      height: 8px;
-      margin-bottom: 12px;
-      background-color: $color-red;
+        display: block;
+        width: 38px;
+        height: 8px;
+        margin-bottom: 12px;
+        background-color: $color-red;
     }
-  
+
     h1 {
-      margin-bottom: 30px;
-      color: $color-dark-blue;
-      font-size: 1.8rem;
-      font-weight: 700;
+        margin-bottom: 30px;
+        color: $color-dark-blue;
+        font-size: 1.8rem;
+        font-weight: 700;
     }
-  
+
     p {
-      font-size: 1.1rem;
+        font-size: 1.1rem;
     }
-  }
+}
 
 /* PAGE 404 */
 
-  .not-found {
+.not-found {
     max-width: 1100px;
     margin: 0 auto;
     display: grid;
     gap: 40px;
     align-items: center;
-  
+
     &__marker {
-      display: block;
-      width: 38px;
-      height: 8px;
-      margin-bottom: 12px;
-      background-color: $color-red;
-    }
-  
-    h1 {
-      margin: 0;
-      color: $color-dark-blue;
-      font-size: 4rem;
-      font-weight: 700;
-    }
-  
-    h2 {
-      margin: 8px 0 15px;
-      color: $color-dark-blue;
-      font-size: 1.7rem;
-    }
-  
-    p {
-      margin-bottom: 30px;
-      line-height: 1.6;
-    }
-  
-    &__button {
-      display: inline-block;
-      padding: 12px 22px;
-      background-color: $color-red;
-      color: $color-white;
-      font-weight: 700;
-  
-      &:hover {
-        opacity: 0.9;
-      }
-  
-      &:focus {
-        outline: 3px solid $color-dark-blue;
-        outline-offset: 3px;
-      }
-    }
-  
-    &__image {
-      img {
-        width: 100%;
         display: block;
-      }
+        width: 38px;
+        height: 8px;
+        margin-bottom: 12px;
+        background-color: $color-red;
     }
-  }
-  
-  @media (min-width: 768px) {
+
+    h1 {
+        margin: 0;
+        color: $color-dark-blue;
+        font-size: 4rem;
+        font-weight: 700;
+    }
+
+    h2 {
+        margin: 8px 0 15px;
+        color: $color-dark-blue;
+        font-size: 1.7rem;
+    }
+
+    p {
+        margin-bottom: 30px;
+        line-height: 1.6;
+    }
+
+    &__button {
+        display: inline-block;
+        padding: 12px 22px;
+        background-color: $color-red;
+        color: $color-white;
+        font-weight: 700;
+
+        &:hover {
+            opacity: 0.9;
+        }
+
+        &:focus {
+            outline: 3px solid $color-dark-blue;
+            outline-offset: 3px;
+        }
+    }
+
+    &__image {
+        img {
+            width: 100%;
+            display: block;
+        }
+    }
+}
+
+@media (min-width: 768px) {
     .not-found {
-      grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
-  } 
+}
 
 /* CLASSES UTILITAIRES */
 
-  .visually-hidden {
+.visually-hidden {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -727,505 +727,505 @@ textarea {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
-  }
+}
 
-  a:focus-visible,
+a:focus-visible,
 button:focus-visible {
-  outline: 3px solid $color-blue;
-  outline-offset: 3px;
+    outline: 3px solid $color-blue;
+    outline-offset: 3px;
 }
 
 .page-loading {
     min-height: 70vh;
-  }
+}
 
-  /* PAGE DE CONNEXION ADMINISTRATEUR */
+/* PAGE DE CONNEXION ADMINISTRATEUR */
 
 .admin-login {
-  max-width: 1100px;
-  margin: 0 auto;
+    max-width: 1100px;
+    margin: 0 auto;
 
-  &__container {
-    width: 100%;
-  }
-
-  h1 {
-    margin: 0 0 40px;
-    color: $color-dark-blue;
-    font-size: 1.8rem;
-    font-weight: 700;
-    text-align: center;
-  }
-
-  &__form {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 30px 24px;
-  background-color: $color-white;
-  border: 1px solid $color-dark-blue;
-  border-radius: 2px;
-
-  h2 {
-    margin: 0 0 30px;
-    color: $color-green;
-    font-size: 1.4rem;
-    font-weight: 700;
-    text-align: center;
-  }
-}
-
-  &__field {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 24px;
-
-  label {
-    color: $color-blue;
-    font-weight: 400;
-  }
-
-  input {
-    width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 0;
-    background-color: $color-light;
-
-    &:focus-visible {
-      outline: 2px solid $color-blue;
-      outline-offset: 2px;
-    }
-  }
-}
-
-  &__actions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    margin-top: 30px;
-
-    button,
-    a {
-      width: 100%;
-      max-width: 280px;
-      padding: 14px 20px;
-      border: 0;
-      border-radius: 4px;
-      text-align: center;
-      font-weight: 700;
-      cursor: pointer;
+    &__container {
+        width: 100%;
     }
 
-    button {
-      background-color: $color-red;
-      color: $color-white;
-    }
-
-    a {
-      background-color: $color-dark-blue;
-      color: $color-white;
-    }
-
-    button:hover,
-    a:hover {
-      opacity: 0.9;
-    }
-  }
-}
-
-@media (min-width: 768px) {
-  .admin-login {
     h1 {
-      font-size: 2.2rem;
-      margin-bottom: 60px;
+        margin: 0 0 40px;
+        color: $color-dark-blue;
+        font-size: 1.8rem;
+        font-weight: 700;
+        text-align: center;
     }
 
     &__form {
-      padding: 45px 60px;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 30px 24px;
+        background-color: $color-white;
+        border: 1px solid $color-dark-blue;
+        border-radius: 2px;
+
+        h2 {
+            margin: 0 0 30px;
+            color: $color-green;
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-align: center;
+        }
+    }
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 24px;
+
+        label {
+            color: $color-blue;
+            font-weight: 400;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 0;
+            background-color: $color-light;
+
+            &:focus-visible {
+                outline: 2px solid $color-blue;
+                outline-offset: 2px;
+            }
+        }
     }
 
     &__actions {
-      flex-direction: row;
-      justify-content: center;
-      gap: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        margin-top: 30px;
+
+        button,
+        a {
+            width: 100%;
+            max-width: 280px;
+            padding: 14px 20px;
+            border: 0;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        button {
+            background-color: $color-red;
+            color: $color-white;
+        }
+
+        a {
+            background-color: $color-dark-blue;
+            color: $color-white;
+        }
+
+        button:hover,
+        a:hover {
+            opacity: 0.9;
+        }
     }
-  }
+}
+
+@media (min-width: 768px) {
+    .admin-login {
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 60px;
+        }
+
+        &__form {
+            padding: 45px 60px;
+        }
+
+        &__actions {
+            flex-direction: row;
+            justify-content: center;
+            gap: 24px;
+        }
+    }
 }
 
 /* DASHBOARD ADMINISTRATEUR */
 
 .admin-dashboard {
-  max-width: 1100px;
-  margin: 0 auto;
-  color: $color-dark-blue;
-  &__tools {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-  margin-bottom: 35px;
-}
-
-&__add {
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  background-color: $color-green;
-  color: $color-white;
-  font-size: 1.1rem;
-  font-weight: 700;
-  cursor: pointer;
-
-  &:hover {
-    filter: brightness(0.95);
-  }
-}
-
-&__search {
-  width: 100%;
-  max-width: 380px;
-  padding: 12px 16px;
-  border: 1px solid $color-blue;
-  border-radius: 0;
-  background-color: $color-white;
-  color: $color-dark;
-  font-size: 1rem;
-
-  &:focus-visible {
-    outline: 2px solid $color-blue;
-    outline-offset: 2px;
-  }
-}
-
-&__separator {
-  margin: 35px 0 30px;
-  border: 0;
-  border-top: 1px solid $color-dark-blue;
-  opacity: 1;
-}
-
-&__actions {
-  white-space: nowrap;
-}
-
-&__icon-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  padding: 6px;
-  margin-right: 8px;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-
-  img {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-  }
-
-  &:hover {
-    opacity: 0.7;
-  }
-
-  &:focus-visible {
-    outline: 2px solid $color-blue;
-    outline-offset: 2px;
-  }
-}
-
-&__logout {
-  display: block;
-  margin: 35px 0 0 auto;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 4px;
-  background-color: $color-dark-blue;
-  color: $color-white;
-  font-size: 1rem;
-  font-weight: 700;
-  cursor: pointer;
-
-  &:hover {
-    opacity: 0.9;
-  }
-
-  &:focus-visible {
-    outline: 2px solid $color-blue;
-    outline-offset: 3px;
-  }
-}
-
-&__empty {
-  padding: 30px 20px !important;
-  text-align: center !important;
-  color: $color-dark-blue;
-  font-style: italic;
-}
-
-  h1 {
-    margin-bottom: 35px;
+    max-width: 1100px;
+    margin: 0 auto;
     color: $color-dark-blue;
-    font-size: 2rem;
-    font-weight: 700;
-  }
-
-  h2 {
-    margin-bottom: 20px;
-    color: $color-dark-blue;
-    font-size: 1.5rem;
-    font-weight: 700;
-  }
-
-  &__table-wrapper {
-    width: 100%;
-    overflow-x: auto;
-    border: 1px solid $color-dark-blue;
-    border-radius: 2px;
-  }
-
-  &__table {
-    width: 100%;
-    min-width: 650px;
-    border-collapse: collapse;
-    color: $color-dark-blue;
-
-    th,
-    td {
-      padding: 16px 20px;
-      text-align: left;
-      vertical-align: middle;
-    }
-
-    th {
-      font-weight: 700;
-      background-color: $color-white;
-    }
-
-    tbody tr:nth-child(odd) {
-      background-color: $color-light;
-    }
-
-    tbody tr:nth-child(even) {
-      background-color: $color-white;
-    }
-
-    td:last-child {
-      white-space: nowrap;
-    }
-  }
-}
-
-@media (min-width: 768px) {
-  .admin-dashboard {
     &__tools {
-      flex-direction: row;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 70px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 35px;
+    }
+
+    &__add {
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        background-color: $color-green;
+        color: $color-white;
+        font-size: 1.1rem;
+        font-weight: 700;
+        cursor: pointer;
+
+        &:hover {
+            filter: brightness(0.95);
+        }
     }
 
     &__search {
-      width: 380px;
+        width: 100%;
+        max-width: 380px;
+        padding: 12px 16px;
+        border: 1px solid $color-blue;
+        border-radius: 0;
+        background-color: $color-white;
+        color: $color-dark;
+        font-size: 1rem;
+
+        &:focus-visible {
+            outline: 2px solid $color-blue;
+            outline-offset: 2px;
+        }
     }
-  }
+
+    &__separator {
+        margin: 35px 0 30px;
+        border: 0;
+        border-top: 1px solid $color-dark-blue;
+        opacity: 1;
+    }
+
+    &__actions {
+        white-space: nowrap;
+    }
+
+    &__icon-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        padding: 6px;
+        margin-right: 8px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+
+        img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &:focus-visible {
+            outline: 2px solid $color-blue;
+            outline-offset: 2px;
+        }
+    }
+
+    &__logout {
+        display: block;
+        margin: 35px 0 0 auto;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 4px;
+        background-color: $color-dark-blue;
+        color: $color-white;
+        font-size: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.9;
+        }
+
+        &:focus-visible {
+            outline: 2px solid $color-blue;
+            outline-offset: 3px;
+        }
+    }
+
+    &__empty {
+        padding: 30px 20px !important;
+        text-align: center !important;
+        color: $color-dark-blue;
+        font-style: italic;
+    }
+
+    h1 {
+        margin-bottom: 35px;
+        color: $color-dark-blue;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        color: $color-dark-blue;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    &__table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        border: 1px solid $color-dark-blue;
+        border-radius: 2px;
+    }
+
+    &__table {
+        width: 100%;
+        min-width: 650px;
+        border-collapse: collapse;
+        color: $color-dark-blue;
+
+        th,
+        td {
+            padding: 16px 20px;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        th {
+            font-weight: 700;
+            background-color: $color-white;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: $color-light;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: $color-white;
+        }
+
+        td:last-child {
+            white-space: nowrap;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .admin-dashboard {
+        &__tools {
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 70px;
+        }
+
+        &__search {
+            width: 380px;
+        }
+    }
 }
 
 // Page d'ajout d'un artisan
 
 .admin-artisan-form {
-  max-width: 1100px;
-  margin: 60px auto 100px;
-  padding: 0 24px;
+    max-width: 1100px;
+    margin: 60px auto 100px;
+    padding: 0 24px;
 
-  &__title {
-    color: $color-dark-blue;
-    font-size: 32px;
-    font-weight: 700;
-    text-align: left;
-    margin-bottom: 40px;
+    &__title {
+        color: $color-dark-blue;
+        font-size: 32px;
+        font-weight: 700;
+        text-align: left;
+        margin-bottom: 40px;
 
-    &::before {
-      content: '';
-      display: block;
-      width: 55px;
-      height: 6px;
-      background-color: $color-red;
-      margin: 0 0 20px;
-    }
-  }
-
-  &__fields {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px 32px;
-  }
-
-  &__field {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-
-    label {
-      color: $color-dark-blue;
-      font-weight: 600;
+        &::before {
+            content: '';
+            display: block;
+            width: 55px;
+            height: 6px;
+            background-color: $color-red;
+            margin: 0 0 20px;
+        }
     }
 
-    input:not([type="checkbox"]),
-    select,
-    textarea {
-      display: block;
-      width: 100%;
-      min-width: 0;
-      padding: 14px 16px;
-      border: none;
-      border-radius: 0;
-      background-color: $color-light;
-      color: $color-dark;
-      font: inherit;
-      box-sizing: border-box;
+    &__fields {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px 32px;
     }
 
-    textarea {
-      resize: vertical;
+    &__field {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        label {
+            color: $color-dark-blue;
+            font-weight: 600;
+        }
+
+        input:not([type='checkbox']),
+        select,
+        textarea {
+            display: block;
+            width: 100%;
+            min-width: 0;
+            padding: 14px 16px;
+            border: none;
+            border-radius: 0;
+            background-color: $color-light;
+            color: $color-dark;
+            font: inherit;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: 2px solid $color-blue;
+            outline-offset: 2px;
+        }
+
+        &:has(#nom),
+        &:has(#email),
+        &:has(#site_web),
+        &:has(#a_propos) {
+            grid-column: 1 / -1;
+        }
     }
 
-    input:focus,
-    select:focus,
-    textarea:focus {
-      outline: 2px solid $color-blue;
-      outline-offset: 2px;
+    &__checkbox {
+        grid-column: 1 / -1;
+
+        label {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: $color-dark-blue;
+            font-size: 18px;
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+        input[type='checkbox'] {
+            width: 20px;
+            height: 20px;
+            margin: 0;
+            accent-color: $color-blue;
+            cursor: pointer;
+        }
     }
 
-    &:has(#nom),
-    &:has(#email),
-    &:has(#site_web),
-    &:has(#a_propos) {
-      grid-column: 1 / -1;
-    }
-  }
-
-  &__checkbox {
-    grid-column: 1 / -1;
-
-    label {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      color: $color-dark-blue;
-      font-size: 18px;
-      font-weight: 400;
-      cursor: pointer;
+    &__actions {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 24px;
+        margin-top: 16px;
     }
 
-    input[type="checkbox"] {
-      width: 20px;
-      height: 20px;
-      margin: 0;
-      accent-color: $color-blue;
-      cursor: pointer;
+    &__cancel,
+    &__submit {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 35%;
+        min-height: 42px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        color: $color-white;
+        font: inherit;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer;
     }
-  }
 
-  &__actions {
-  grid-column: 1 / -1;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 24px;
-  margin-top: 16px;
-}
+    &__cancel {
+        background-color: $color-red;
+    }
 
-&__cancel,
-&__submit {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 35%;
-  min-height: 42px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  color: $color-white;
-  font: inherit;
-  font-weight: 700;
-  text-decoration: none;
-  cursor: pointer;
-}
+    &__submit {
+        background-color: $color-green;
 
-&__cancel {
-  background-color: $color-red;
-}
-
-&__submit {
-  background-color: $color-green;
-
-  &:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
-}
+        &:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+    }
 }
 
 // Responsive du formulaire d'ajout d'un artisan
 
 @media (max-width: 767px) {
-  .admin-artisan-form {
-    margin: 35px auto 50px;
-    padding: 0 16px;
+    .admin-artisan-form {
+        margin: 35px auto 50px;
+        padding: 0 16px;
 
-    &__title {
-      font-size: 24px;
-      margin-bottom: 30px;
+        &__title {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        &__fields {
+            gap: 20px 16px;
+        }
+
+        &__field {
+            label {
+                font-size: 14px;
+            }
+
+            input:not([type='checkbox']),
+            select,
+            textarea {
+                padding: 12px;
+                font-size: 14px;
+            }
+        }
+
+        &__checkbox {
+            label {
+                font-size: 15px;
+                gap: 10px;
+            }
+
+            input[type='checkbox'] {
+                width: 18px;
+                height: 18px;
+                flex-shrink: 0;
+            }
+        }
+
+        &__actions {
+            justify-content: space-between;
+            gap: 16px;
+            margin-top: 10px;
+        }
+
+        &__cancel,
+        &__submit {
+            width: auto;
+            flex: 1;
+            min-height: 40px;
+            padding: 10px;
+            font-size: 14px;
+        }
     }
-
-    &__fields {
-      gap: 20px 16px;
-    }
-
-    &__field {
-      label {
-        font-size: 14px;
-      }
-
-      input:not([type="checkbox"]),
-      select,
-      textarea {
-        padding: 12px;
-        font-size: 14px;
-      }
-    }
-
-    &__checkbox {
-  label {
-    font-size: 15px;
-    gap: 10px;
-  }
-
-  input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
-  }
-}
-
-&__actions {
-  justify-content: space-between;
-  gap: 16px;
-  margin-top: 10px;
-}
-
-&__cancel,
-&__submit {
-  width: auto;
-  flex: 1;
-  min-height: 40px;
-  padding: 10px;
-  font-size: 14px;
-   }
-  }
 }

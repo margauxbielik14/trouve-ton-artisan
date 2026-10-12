@@ -1,0 +1,9 @@
+node_modules/
+dist/
+build/
+coverage/
+.env
+.env.*
+*.pem
+package-lock.json
+server/cookies.txt

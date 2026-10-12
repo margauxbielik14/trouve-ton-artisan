@@ -23,14 +23,16 @@ app.use(helmet());
 
 // Autoriser uniquement l'application front-end
 
-app.use(cors({
-    origin: [
-      'http://localhost:5173',
-      'http://localhost:4173',
-      'https://trouve-ton-artisan-frontend-tmvc.onrender.com'
-    ],
-    credentials: true
-  }));
+app.use(
+    cors({
+        origin: [
+            'http://localhost:5173',
+            'http://localhost:4173',
+            'https://trouve-ton-artisan-frontend-tmvc.onrender.com'
+        ],
+        credentials: true
+    })
+);
 
 // Gestion des sessions administrateur
 app.use(sessionMiddleware);
@@ -55,7 +57,7 @@ const PORT = process.env.PORT || 3000;
 
 app.get('/api/test', (req, res) => {
     res.json({ message: 'Route API test OK' });
-  });
+});
 
 app.use('/api/categories', categorieRoutes);
 app.use('/api/specialites', specialiteRoutes);
@@ -63,13 +65,14 @@ app.use('/api/artisans', artisanRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/admin', adminRoutes);
 
-sequelize.authenticate()
-.then(() => {
-  console.log('✅ Connexion à MySQL réussie');
-})
-.catch((error) => {
-  console.error('❌ Erreur de connexion à MySQL :', error);
-});
+sequelize
+    .authenticate()
+    .then(() => {
+        console.log('✅ Connexion à MySQL réussie');
+    })
+    .catch((error) => {
+        console.error('❌ Erreur de connexion à MySQL :', error);
+    });
 
 app.get('/', (req, res) => {
     res.json({ message: 'API Trouve ton artisan' });

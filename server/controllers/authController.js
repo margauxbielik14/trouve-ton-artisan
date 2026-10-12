@@ -69,7 +69,6 @@ const login = async (req, res) => {
                 });
             });
         });
-
     } catch (error) {
         console.error('Erreur lors de la connexion :', error);
 
@@ -92,12 +91,9 @@ const me = async (req, res) => {
         }
 
         // Retrouver l'administrateur dans la base de données
-        const administrateur = await Administrateur.findByPk(
-            req.session.adminId,
-            {
-                attributes: ['id_admin', 'email']
-            }
-        );
+        const administrateur = await Administrateur.findByPk(req.session.adminId, {
+            attributes: ['id_admin', 'email']
+        });
 
         // Vérifier que le compte existe toujours
         if (!administrateur) {
@@ -110,7 +106,6 @@ const me = async (req, res) => {
         return res.status(200).json({
             administrateur
         });
-
     } catch (error) {
         console.error('Erreur de vérification de session :', error);
 

@@ -39,12 +39,12 @@ exports.getArtisansByCategorie = async (req, res) => {
     try {
         const errors = validationResult(req);
 
-if (!errors.isEmpty()) {
-  return res.status(400).json({
-    message: 'Identifiant de catégorie invalide',
-    errors: errors.array()
-  });
-}
+        if (!errors.isEmpty()) {
+            return res.status(400).json({
+                message: 'Identifiant de catégorie invalide',
+                errors: errors.array()
+            });
+        }
 
         const { id } = req.params;
 
@@ -69,7 +69,6 @@ if (!errors.isEmpty()) {
         });
 
         res.status(200).json(artisans);
-
     } catch (error) {
         res.status(500).json({
             message: 'Erreur lors de la récupération des artisans'
@@ -83,12 +82,12 @@ exports.getArtisanById = async (req, res) => {
     try {
         const errors = validationResult(req);
 
-    if (!errors.isEmpty()) {
-      return res.status(400).json({
-        message: 'Identifiant d’artisan invalide',
-        errors: errors.array()
-      });
-    }
+        if (!errors.isEmpty()) {
+            return res.status(400).json({
+                message: 'Identifiant d’artisan invalide',
+                errors: errors.array()
+            });
+        }
 
         const { id } = req.params;
 
@@ -114,7 +113,6 @@ exports.getArtisanById = async (req, res) => {
         }
 
         res.status(200).json(artisan);
-
     } catch (error) {
         res.status(500).json({
             message: 'Erreur lors de la récupération de l’artisan'
@@ -128,12 +126,12 @@ exports.searchArtisans = async (req, res) => {
     try {
         const errors = validationResult(req);
 
-    if (!errors.isEmpty()) {
-      return res.status(400).json({
-        message: 'Recherche invalide',
-        errors: errors.array()
-      });
-    }
+        if (!errors.isEmpty()) {
+            return res.status(400).json({
+                message: 'Recherche invalide',
+                errors: errors.array()
+            });
+        }
 
         const { search } = req.query;
 
@@ -164,7 +162,6 @@ exports.searchArtisans = async (req, res) => {
         });
 
         res.status(200).json(artisans);
-
     } catch (error) {
         res.status(500).json({
             message: 'Erreur lors de la recherche des artisans'
@@ -216,7 +213,6 @@ ${message}`
         res.status(200).json({
             message: 'Message envoyé avec succès'
         });
-
     } catch (error) {
         console.error('Erreur lors de l’envoi du message :', error);
 

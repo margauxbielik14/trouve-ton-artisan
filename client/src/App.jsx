@@ -13,76 +13,43 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 function App() {
-  return (
-    <>
-      <Header />
+    return (
+        <>
+            <Header />
 
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
+            <main>
+                <Routes>
+                    <Route path="/" element={<Home />} />
 
-          <Route
-            path="/categorie/:id"
-            element={<ArtisansList />}
-          />
+                    <Route path="/categorie/:id" element={<ArtisansList />} />
 
-          <Route
-            path="/recherche"
-            element={<ArtisansList />}
-          />
+                    <Route path="/recherche" element={<ArtisansList />} />
 
-          <Route
-            path="/artisan/:id"
-            element={<ArtisanDetail />}
-          />
+                    <Route path="/artisan/:id" element={<ArtisanDetail />} />
 
-          <Route
-            path="/mentions-legales"
-            element={<LegalPage />}
-          />
+                    <Route path="/mentions-legales" element={<LegalPage />} />
 
-          <Route
-            path="/donnees-personnelles"
-            element={<LegalPage />}
-          />
+                    <Route path="/donnees-personnelles" element={<LegalPage />} />
 
-          <Route
-            path="/accessibilite"
-            element={<LegalPage />}
-          />
+                    <Route path="/accessibilite" element={<LegalPage />} />
 
-          <Route
-            path="/cookies"
-            element={<LegalPage />}
-          />
+                    <Route path="/cookies" element={<LegalPage />} />
 
-          <Route
-          path="/admin/connexion"
-          element={<AdminLogin />}
-          />
+                    <Route path="/admin/connexion" element={<AdminLogin />} />
 
-          <Route
-          path="/admin/dashboard"
-          element={<AdminDashboard />}
-          />
+                    <Route path="/admin/dashboard" element={<AdminDashboard />} />
 
-          <Route
-          path="/admin/artisans/ajouter"
-          element={<AdminArtisanAdd />}
-          />
+                    <Route path="/admin/artisans/ajouter" element={<AdminArtisanAdd />} />
 
-          <Route
-          path="/admin/artisans/modifier/:id"
-          element={<AdminArtisanEdit />}
-          />
+                    <Route path="/admin/artisans/modifier/:id" element={<AdminArtisanEdit />} />
 
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </main>
+                    <Route path="*" element={<NotFound />} />
+                </Routes>
+            </main>
 
-      <Footer />
-    </>
-  );
+            <Footer />
+        </>
+    );
 }
 
 export default App;

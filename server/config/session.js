@@ -15,16 +15,13 @@ const sessionConnection = mysql.createPool({
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
     ...(isAiven && {
-    ssl: {
-    ca: process.env.DB_SSL_CA
-        ? process.env.DB_SSL_CA.replace(/\\n/g, '\n')
-        : fs.readFileSync(
-            path.join(__dirname, '../certs/ca.pem'),
-            'utf8'
-        ),
-    rejectUnauthorized: true
-}
-})
+        ssl: {
+            ca: process.env.DB_SSL_CA
+                ? process.env.DB_SSL_CA.replace(/\\n/g, '\n')
+                : fs.readFileSync(path.join(__dirname, '../certs/ca.pem'), 'utf8'),
+            rejectUnauthorized: true
+        }
+    })
 });
 
 // Stockage des sessions dans MySQL
@@ -39,7 +36,8 @@ sessionStore.on('error', (error) => {
     console.error('Erreur du stockage des sessions :', error.message);
 });
 
-sessionStore.onReady()
+sessionStore
+    .onReady()
     .then(() => {
         console.log('✅ Stockage des sessions MySQL initialisé');
     })

@@ -19,7 +19,6 @@ const getAllArtisans = async (req, res) => {
         });
 
         return res.status(200).json(artisans);
-
     } catch (error) {
         console.error('Erreur lors de la récupération des artisans :', error);
 
@@ -32,35 +31,26 @@ const getAllArtisans = async (req, res) => {
 // Ajouter un nouvel artisan
 const createArtisan = async (req, res) => {
     try {
-        const {
-            nom,
-            note,
-            ville,
-            a_propos,
-            email,
-            site_web,
-            top,
-            id_specialite
-        } = req.body;
+        const { nom, note, ville, a_propos, email, site_web, top, id_specialite } = req.body;
 
         // Vérifier les données envoyées
-const errors = validateArtisan(req.body);
+        const errors = validateArtisan(req.body);
 
-if (errors.length > 0) {
-    return res.status(400).json({
-        message: 'Les informations de l’artisan sont invalides.',
-        errors
-    });
-}
+        if (errors.length > 0) {
+            return res.status(400).json({
+                message: 'Les informations de l’artisan sont invalides.',
+                errors
+            });
+        }
 
-// Vérifier que la spécialité existe dans MySQL
-const specialite = await Specialite.findByPk(id_specialite);
+        // Vérifier que la spécialité existe dans MySQL
+        const specialite = await Specialite.findByPk(id_specialite);
 
-if (!specialite) {
-    return res.status(400).json({
-        message: 'La spécialité sélectionnée n’existe pas.'
-    });
-}
+        if (!specialite) {
+            return res.status(400).json({
+                message: 'La spécialité sélectionnée n’existe pas.'
+            });
+        }
 
         const nouvelArtisan = await Artisan.create({
             nom,
@@ -77,7 +67,6 @@ if (!specialite) {
             message: 'Artisan ajouté avec succès.',
             artisan: nouvelArtisan
         });
-
     } catch (error) {
         console.error('Erreur lors de la création de l’artisan :', error);
 
@@ -100,35 +89,26 @@ const updateArtisan = async (req, res) => {
             });
         }
 
-        const {
-            nom,
-            note,
-            ville,
-            a_propos,
-            email,
-            site_web,
-            top,
-            id_specialite
-        } = req.body;
+        const { nom, note, ville, a_propos, email, site_web, top, id_specialite } = req.body;
 
         // Vérifier les données envoyées
-const errors = validateArtisan(req.body);
+        const errors = validateArtisan(req.body);
 
-if (errors.length > 0) {
-    return res.status(400).json({
-        message: 'Les informations de l’artisan sont invalides.',
-        errors
-    });
-}
+        if (errors.length > 0) {
+            return res.status(400).json({
+                message: 'Les informations de l’artisan sont invalides.',
+                errors
+            });
+        }
 
-// Vérifier que la spécialité existe dans MySQL
-const specialite = await Specialite.findByPk(id_specialite);
+        // Vérifier que la spécialité existe dans MySQL
+        const specialite = await Specialite.findByPk(id_specialite);
 
-if (!specialite) {
-    return res.status(400).json({
-        message: 'La spécialité sélectionnée n’existe pas.'
-    });
-}
+        if (!specialite) {
+            return res.status(400).json({
+                message: 'La spécialité sélectionnée n’existe pas.'
+            });
+        }
 
         await artisan.update({
             nom,
@@ -145,7 +125,6 @@ if (!specialite) {
             message: 'Artisan modifié avec succès.',
             artisan
         });
-
     } catch (error) {
         console.error('Erreur lors de la modification de l’artisan :', error);
 
@@ -173,7 +152,6 @@ const deleteArtisan = async (req, res) => {
         return res.status(200).json({
             message: 'Artisan supprimé avec succès.'
         });
-
     } catch (error) {
         console.error('Erreur lors de la suppression de l’artisan :', error);
 
