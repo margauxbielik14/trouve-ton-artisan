@@ -19,6 +19,7 @@ function App() {
 
             <main>
                 <Routes>
+                    {/* Pages publiques */}
                     <Route path="/" element={<Home />} />
 
                     <Route path="/categorie/:id" element={<ArtisansList />} />
@@ -35,6 +36,7 @@ function App() {
 
                     <Route path="/cookies" element={<LegalPage />} />
 
+                    {/* Pages d'administration */}
                     <Route path="/admin/connexion" element={<AdminLogin />} />
 
                     <Route path="/admin/dashboard" element={<AdminDashboard />} />
@@ -43,6 +45,7 @@ function App() {
 
                     <Route path="/admin/artisans/modifier/:id" element={<AdminArtisanEdit />} />
 
+                    {/* Page 404 */}
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </main>

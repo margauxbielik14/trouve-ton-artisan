@@ -1,5 +1,6 @@
 const nodemailer = require('nodemailer');
 
+// Configuration du service d'envoi d'e-mails
 const transporter = nodemailer.createTransport({
     host: process.env.MAIL_HOST,
     port: process.env.MAIL_PORT,

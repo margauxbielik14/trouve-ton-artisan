@@ -9,6 +9,7 @@ function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const navigate = useNavigate();
 
+    // Récupérer les catégories depuis l'API
     useEffect(() => {
         fetch(`${API_URL}/api/categories`)
             .then((response) => response.json())
@@ -20,6 +21,7 @@ function Header() {
             });
     }, []);
 
+    // Gérer la recherche d'un artisan
     const handleSubmit = (event) => {
         event.preventDefault();
 

@@ -6,6 +6,7 @@ const API_URL = import.meta.env.VITE_API_URL;
 function Footer() {
     const [categories, setCategories] = useState([]);
 
+    // Récupérer les catégories depuis l'API
     useEffect(() => {
         fetch(`${API_URL}/api/categories`)
             .then((response) => response.json())

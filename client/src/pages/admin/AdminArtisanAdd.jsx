@@ -23,6 +23,7 @@ function AdminArtisanAdd() {
     const [enregistrement, setEnregistrement] = useState(false);
     const [erreur, setErreur] = useState('');
 
+    // Vérifier que l'administrateur est connecté
     useEffect(() => {
         const verifierSession = async () => {
             try {
@@ -45,6 +46,7 @@ function AdminArtisanAdd() {
         verifierSession();
     }, [navigate]);
 
+    // Récupérer les spécialités depuis l'API
     useEffect(() => {
         const recupererSpecialites = async () => {
             try {
@@ -65,6 +67,7 @@ function AdminArtisanAdd() {
         recupererSpecialites();
     }, []);
 
+    // Mettre à jour les champs du formulaire
     const handleChange = (event) => {
         const { name, value, type, checked } = event.target;
 
@@ -74,6 +77,7 @@ function AdminArtisanAdd() {
         }));
     };
 
+    // Enregistrer un nouvel artisan
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -116,6 +120,7 @@ function AdminArtisanAdd() {
         }
     };
 
+    // Récupérer les catégories depuis l'API
     useEffect(() => {
         const recupererCategories = async () => {
             try {

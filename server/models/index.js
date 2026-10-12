@@ -4,25 +4,21 @@ const Artisan = require('./Artisan');
 const Administrateur = require('./Administrateur');
 
 // Une catégorie possède plusieurs spécialités
-
 Categorie.hasMany(Specialite, {
     foreignKey: 'id_categorie'
 });
 
 // Une spécialité appartient à une catégorie
-
 Specialite.belongsTo(Categorie, {
     foreignKey: 'id_categorie'
 });
 
 // Une spécialité possède plusieurs artisans
-
 Specialite.hasMany(Artisan, {
     foreignKey: 'id_specialite'
 });
 
 // Un artisan appartient à une spécialité
-
 Artisan.belongsTo(Specialite, {
     foreignKey: 'id_specialite'
 });

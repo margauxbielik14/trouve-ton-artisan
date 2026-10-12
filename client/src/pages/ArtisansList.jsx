@@ -13,6 +13,7 @@ function ArtisansList() {
     const search = searchParams.get('search');
     const categorieNom = artisans[0]?.Specialite?.Categorie?.nom;
 
+    // Mise à jour du titre et de la description de la page
     useEffect(() => {
         const title = search
             ? `Recherche : ${search} | Trouve ton artisan !`
@@ -32,6 +33,7 @@ function ArtisansList() {
         }
     }, [search, categorieNom]);
 
+    // Récupérer les artisans selon la catégorie ou la recherche
     useEffect(() => {
         let url;
 

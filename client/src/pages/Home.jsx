@@ -7,6 +7,7 @@ function Home() {
     const [artisans, setArtisans] = useState([]);
 
     useEffect(() => {
+        // Mise à jour du titre et de la description de la page
         document.title = 'Trouve ton artisan ! | Auvergne-Rhône-Alpes';
 
         const metaDescription = document.querySelector('meta[name="description"]');
@@ -17,6 +18,7 @@ function Home() {
                 'Trouvez facilement un artisan en Auvergne-Rhône-Alpes selon son métier et sa localisation.'
             );
         }
+        // Récupérer les artisans du mois depuis l'API
         fetch(`${API_URL}/api/artisans/top`)
             .then((response) => response.json())
             .then((data) => {

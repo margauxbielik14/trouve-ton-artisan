@@ -1035,7 +1035,7 @@ button:focus-visible {
     }
 }
 
-// Page d'ajout d'un artisan
+/* FORMULAIRE D'AJOUT ET DE MODIFICATION D'UN ARTISAN */
 
 .admin-artisan-form {
     max-width: 1100px;
@@ -1060,9 +1060,8 @@ button:focus-visible {
     }
 
     &__fields {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 24px 32px;
+        grid-template-columns: 1fr;
+        gap: 20px 16px;
     }
 
     &__field {
@@ -1171,7 +1170,7 @@ button:focus-visible {
     }
 }
 
-// Responsive du formulaire d'ajout d'un artisan
+/* FORMULAIRE ARTISAN - RESPONSIVE */
 
 @media (max-width: 767px) {
     .admin-artisan-form {

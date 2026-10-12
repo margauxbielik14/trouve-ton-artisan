@@ -4,6 +4,7 @@ const { body, param, query } = require('express-validator');
 
 const artisanController = require('../controllers/artisanController');
 
+// Routes de consultation et de recherche des artisans
 router.get('/top', artisanController.getTopArtisans);
 router.get(
     '/categorie/:id',
@@ -17,6 +18,7 @@ router.get(
 );
 router.get('/:id', param('id').isInt({ min: 1 }), artisanController.getArtisanById);
 
+// Route du formulaire de contact d'un artisan
 router.post(
     '/:id/contact',
     [

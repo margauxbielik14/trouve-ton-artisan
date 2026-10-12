@@ -4,7 +4,7 @@ const mysql = require('mysql2');
 const fs = require('fs');
 const path = require('path');
 
-// Détecter si nous utilisons MySQL Aiven
+// Détection de l'hébergement Aiven
 const isAiven = process.env.DB_HOST?.endsWith('.aivencloud.com');
 
 // Connexion MySQL dédiée aux sessions

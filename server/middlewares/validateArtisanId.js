@@ -1,3 +1,4 @@
+// Vérifier la validité de l'identifiant d'un artisan
 const validateArtisanId = (req, res, next) => {
     const { id } = req.params;
 

@@ -12,6 +12,7 @@ function ContactForm({ artisanId }) {
 
     const [confirmation, setConfirmation] = useState('');
 
+    // Mise à jour des champs du formulaire
     const handleChange = (event) => {
         setFormData({
             ...formData,
@@ -19,6 +20,7 @@ function ContactForm({ artisanId }) {
         });
     };
 
+    // Envoi du message à l'artisan
     const handleSubmit = async (event) => {
         event.preventDefault();
 

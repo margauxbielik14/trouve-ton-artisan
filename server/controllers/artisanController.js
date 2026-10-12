@@ -4,7 +4,6 @@ const transporter = require('../services/mailService');
 const { validationResult } = require('express-validator');
 
 // Récupérer les artisans du mois
-
 exports.getTopArtisans = async (req, res) => {
     try {
         const artisans = await Artisan.findAll({
@@ -34,7 +33,6 @@ exports.getTopArtisans = async (req, res) => {
 };
 
 // Récupérer les artisans d'une catégorie
-
 exports.getArtisansByCategorie = async (req, res) => {
     try {
         const errors = validationResult(req);
@@ -77,7 +75,6 @@ exports.getArtisansByCategorie = async (req, res) => {
 };
 
 // Récupérer un artisan par son identifiant
-
 exports.getArtisanById = async (req, res) => {
     try {
         const errors = validationResult(req);
@@ -121,7 +118,6 @@ exports.getArtisanById = async (req, res) => {
 };
 
 // Rechercher des artisans par nom
-
 exports.searchArtisans = async (req, res) => {
     try {
         const errors = validationResult(req);
@@ -170,7 +166,6 @@ exports.searchArtisans = async (req, res) => {
 };
 
 // Envoyer un message à un artisan
-
 exports.contactArtisan = async (req, res) => {
     try {
         const errors = validationResult(req);

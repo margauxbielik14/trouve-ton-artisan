@@ -11,6 +11,7 @@ function ArtisanDetail() {
     const [artisan, setArtisan] = useState(null);
     const [loading, setLoading] = useState(true);
 
+    // Récupérer les informations de l'artisan depuis l'API
     useEffect(() => {
         fetch(`${API_URL}/api/artisans/${id}`)
             .then((response) => {
@@ -30,6 +31,7 @@ function ArtisanDetail() {
             });
     }, [id]);
 
+    // Mise à jour du titre et de la description de la page
     useEffect(() => {
         if (!artisan) {
             return;

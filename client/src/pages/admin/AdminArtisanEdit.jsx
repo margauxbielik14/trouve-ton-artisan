@@ -26,6 +26,7 @@ function AdminArtisanEdit() {
     const [specialites, setSpecialites] = useState([]);
     const [enregistrement, setEnregistrement] = useState(false);
 
+    // Vérifier que l'administrateur est connecté
     useEffect(() => {
         const verifierSession = async () => {
             try {
@@ -48,6 +49,7 @@ function AdminArtisanEdit() {
         verifierSession();
     }, [navigate]);
 
+    // Récupérer les informations de l'artisan à modifier
     useEffect(() => {
         if (chargement) return;
 
@@ -92,6 +94,7 @@ function AdminArtisanEdit() {
         recupererArtisan();
     }, [id, chargement]);
 
+    // Récupérer les catégories et les spécialités
     useEffect(() => {
         if (chargement) return;
 
@@ -120,6 +123,7 @@ function AdminArtisanEdit() {
         recupererListes();
     }, [chargement]);
 
+    // Mettre à jour les champs du formulaire
     const handleChange = (event) => {
         const { name, value, type, checked } = event.target;
 
@@ -129,6 +133,7 @@ function AdminArtisanEdit() {
         }));
     };
 
+    // Mettre à jour la catégorie et réinitialiser la spécialité
     const handleCategorieChange = (event) => {
         setCategorieSelectionnee(event.target.value);
 
@@ -138,6 +143,7 @@ function AdminArtisanEdit() {
         }));
     };
 
+    // Enregistrer les modifications de l'artisan
     const handleSubmit = async (event) => {
         event.preventDefault();
 

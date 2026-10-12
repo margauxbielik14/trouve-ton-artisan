@@ -1,3 +1,4 @@
+// Vérifier que l'administrateur est connecté
 const requireAdmin = (req, res, next) => {
     if (!req.session || !req.session.adminId) {
         return res.status(401).json({

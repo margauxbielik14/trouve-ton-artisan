@@ -8,6 +8,7 @@ function AdminDashboard() {
     const [erreurArtisans, setErreurArtisans] = useState('');
     const [recherche, setRecherche] = useState('');
 
+    // Vérifier que l'administrateur est connecté
     useEffect(() => {
         const verifierSession = async () => {
             try {
@@ -30,6 +31,7 @@ function AdminDashboard() {
         verifierSession();
     }, [navigate]);
 
+    // Récupérer la liste des artisans depuis l'API
     useEffect(() => {
         const chargerArtisans = async () => {
             try {
@@ -43,7 +45,6 @@ function AdminDashboard() {
 
                 const data = await response.json();
 
-                console.log('Artisans récupérés :', data);
                 setArtisans(data);
             } catch (error) {
                 console.error('Erreur de chargement :', error);
@@ -54,44 +55,9 @@ function AdminDashboard() {
         chargerArtisans();
     }, []);
 
+    // Filtrer les artisans selon la recherche
     const artisansFiltres = artisans.filter((artisan) => {
         const texteRecherche = recherche.toLowerCase().trim();
-
-        const handleDelete = async (artisan) => {
-            const confirmation = window.confirm(
-                `Voulez-vous vraiment supprimer "${artisan.nom}" ?`
-            );
-
-            if (!confirmation) {
-                return;
-            }
-
-            try {
-                const response = await fetch(
-                    `${import.meta.env.VITE_API_URL}/api/admin/artisans/${artisan.id_artisan}`,
-                    {
-                        method: 'DELETE',
-                        credentials: 'include'
-                    }
-                );
-
-                if (response.status === 401 || response.status === 403) {
-                    navigate('/admin/connexion', { replace: true });
-                    return;
-                }
-
-                if (!response.ok) {
-                    throw new Error('Impossible de supprimer cet artisan.');
-                }
-
-                setArtisans((precedent) =>
-                    precedent.filter((element) => element.id_artisan !== artisan.id_artisan)
-                );
-            } catch (error) {
-                console.error('Erreur de suppression :', error);
-                window.alert(error.message);
-            }
-        };
 
         return (
             artisan.nom.toLowerCase().includes(texteRecherche) ||
@@ -100,8 +66,7 @@ function AdminDashboard() {
         );
     });
 
-    //Déconnexion de l'administrateur
-
+    // Déconnexion de l'administrateur
     const handleLogout = async () => {
         try {
             const response = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/logout`, {
@@ -120,10 +85,7 @@ function AdminDashboard() {
         }
     };
 
-    if (chargement) {
-        return <p>Vérification de la connexion...</p>;
-    }
-
+    // Supprimer un artisan après confirmation
     const handleDelete = async (artisan) => {
         const confirmation = window.confirm(`Voulez-vous vraiment supprimer "${artisan.nom}" ?`);
 
@@ -158,6 +120,10 @@ function AdminDashboard() {
         }
     };
 
+    if (chargement) {
+        return <p>Vérification de la connexion...</p>;
+    }
+
     return (
         <section className="admin-dashboard">
             <h1>Gestion des artisans</h1>
@@ -184,6 +150,11 @@ function AdminDashboard() {
             <hr className="admin-dashboard__separator" />
 
             <h2>Liste des artisans</h2>
+            {erreurArtisans && (
+                <p role="alert" className="admin-dashboard__error">
+                    {erreurArtisans}
+                </p>
+            )}
 
             <div className="admin-dashboard__table-wrapper">
                 <table className="admin-dashboard__table">
@@ -231,7 +202,6 @@ function AdminDashboard() {
                                         aria-label={`Supprimer ${artisan.nom}`}
                                         className="admin-dashboard__icon-button"
                                         onClick={() => {
-                                            console.log('Clic sur la poubelle :', artisan.nom);
                                             handleDelete(artisan);
                                         }}
                                     >

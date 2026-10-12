@@ -8,6 +8,7 @@ function AdminLogin() {
     const [erreur, setErreur] = useState('');
     const [chargement, setChargement] = useState(false);
 
+    // Vérifier les identifiants et connecter l'administrateur
     const handleSubmit = async (event) => {
         event.preventDefault();
 

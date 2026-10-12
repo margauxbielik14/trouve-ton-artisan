@@ -78,9 +78,7 @@ const login = async (req, res) => {
     }
 };
 
-// Vérification de la session
-
-// Vérifier si l'administrateur est connecté
+// Vérification de la session administrateur
 const me = async (req, res) => {
     try {
         // Vérifier si une session administrateur existe
@@ -115,7 +113,6 @@ const me = async (req, res) => {
     }
 };
 
-// Déconnexion de l'administrateur
 // Déconnexion de l'administrateur
 const logout = async (req, res) => {
     // Détruire la session de l'administrateur

@@ -1,5 +1,6 @@
 const rateLimit = require('express-rate-limit');
 
+// Limiter les tentatives de connexion à l'administration
 const loginLimiter = rateLimit({
     windowMs: 15 * 60 * 1000,
     limit: 5,

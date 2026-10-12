@@ -28,6 +28,7 @@ const validateArtisan = (data) => {
         errors.push('Veuillez saisir une adresse e-mail valide.');
     }
 
+    // Vérifier que la note est comprise entre 0 et 5
     const note = data.note;
 
     if (typeof note !== 'number' || !Number.isFinite(note) || note < 0 || note > 5) {

@@ -55,6 +55,7 @@ app.use(express.json({ limit: '10kb' }));
 
 const PORT = process.env.PORT || 3000;
 
+// Routes de l'API
 app.get('/api/test', (req, res) => {
     res.json({ message: 'Route API test OK' });
 });
@@ -65,6 +66,7 @@ app.use('/api/artisans', artisanRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/admin', adminRoutes);
 
+// Vérification de la connexion à MySQL
 sequelize
     .authenticate()
     .then(() => {
